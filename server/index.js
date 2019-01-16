@@ -11,7 +11,6 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, cb) => {
     // error first callback
-    console.log(file)
     cb(null, `${file.originalname}`)
   }
 });

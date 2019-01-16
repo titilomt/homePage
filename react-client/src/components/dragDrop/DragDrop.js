@@ -88,14 +88,15 @@ class DragDrop extends Component {
             )
           }}
         </Dropzone>
-        <aside>
-          <h4>Files</h4>
-          <ul>{files}</ul>
-        </aside>
-        <button onClick={()=> {this.upload()}}>Upload</button>
-        <div> {Math.round(this.state.loaded,2) } %</div>
-      </section>
-      
+        <div>
+          <aside>
+            <h4>Files</h4>
+            <ul>{files}</ul>
+          </aside>
+          <button className={'slider-btn'} onClick={()=> {this.upload()}}>Upload</button>
+          <div> {Math.round(this.state.loaded,2) } %</div>
+        </div>
+      </section>      
     );
   }
 }

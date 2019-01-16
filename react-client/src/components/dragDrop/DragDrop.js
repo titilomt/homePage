@@ -39,9 +39,10 @@ class DragDrop extends Component {
         return {f : cur, n: `${idx}file`}
       })
 
-      console.log(this.state.files[0])
+      
+      for(let i in this.state.files) data.append('file', this.state.files[i])
 
-      data.append('file', this.state.files[0])
+      console.log(data)
 
       axios
       .post('http://localhost:8080/upload', data, {
@@ -53,6 +54,7 @@ class DragDrop extends Component {
       })
       .then(res => {
         console.log(res.statusText)
+        this.onCancel()
       })
 
 

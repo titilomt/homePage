@@ -20,8 +20,11 @@ const uploader = multer({ storage });
 const app = express();
 app.use(express.static(`${__dirname}/../react-client/dist`));
 
-app.post('/upload', uploader.single('file'), 
-    (req, res) => res.send('<h2>Upload realizado com sucesso</h2>'));
+app.post('/upload', uploader.array('file', 12), 
+  (req, res) => {
+    console.log(req.files)
+    res.send('<h2>Upload realizado com sucesso</h2>')
+  });
 
 app.post('/upload2', uploader.array(), (req, res, next) => {
   let uploadFile = req.files

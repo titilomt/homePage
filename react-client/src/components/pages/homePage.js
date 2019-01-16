@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BodyPage from './bodyPage';
+import DragDrop from '../dragDrop/DragDrop';
 
 const imgHome = require('../../img/slide1.jpg');
 
@@ -17,6 +18,9 @@ class HomePage extends Component {
             </div> 
         </div>
         <BodyPage />
+        <div>
+         <DragDrop />
+        </div>
       </section>
     )
   }
